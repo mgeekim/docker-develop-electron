@@ -1,0 +1,13 @@
+version: "3"
+services:
+  electron-app:
+    build:
+      context: .
+      dockerfile: electron.Dockerfile
+    container_name: electron-app
+    image: mgeekim/electron-app
+    network_mode: host
+    volumes:
+      - ./src:/app/src:rw
+    stdin_open: true
+    tty: true
